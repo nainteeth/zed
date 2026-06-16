@@ -1,0 +1,68 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {},
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {},
+  },
+  {
+    "bindings": {
+      "  f f": "editor::OpenFile",
+    },
+  },
+  {
+    // Unbind space to use it later as the leader key
+    "context": "VimControl && !menu",
+    "bindings": {
+      "space": null,
+    },
+  },
+  {
+    "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
+    "bindings": {
+      "space w b": "workspace::NewFileSplitHorizontal",
+      "space w v": "workspace::NewFileSplitVertical",
+      "space w j": "workspace::ActivatePaneDown",
+      "space w k": "workspace::ActivatePaneUp",
+      "space w h": "workspace::ActivatePaneLeft",
+      "space w l": "workspace::ActivatePaneRight",
+
+      "alt-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "alt-j": ["workspace::ActivatePaneInDirection", "Down"],
+      "alt-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "alt-l": ["workspace::ActivatePaneInDirection", "Right"],
+
+      "space w q": "pane::CloseActiveItem",
+      "space w t": "terminal_panel::ToggleFocus",
+      "space f f": "file_finder::Toggle",
+      "space b b": "tab_switcher::Toggle",
+      "space b k": "pane::CloseActiveItem",
+
+      "space l d": "editor::GoToDefinition",
+      "space l r": "editor::FindAllReferences",
+      "space l n": "editor::Rename",
+      "space l a": "editor::ToggleCodeActions",
+      "space l f": "editor::Format",
+      "space l i": "editor::GoToImplementation",
+      "space l s": "outline::Toggle",
+
+      "space g g": "git_panel::ToggleFocus",
+
+      "space p p": "projects::OpenRecent",
+      "space p f": "file_finder::Toggle",
+      "space p s": "pane::DeploySearch",
+      "space p b": "tab_switcher::Toggle",
+
+      "space s": "vim::PushSneak",
+    },
+  },
+]
